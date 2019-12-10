@@ -1,0 +1,4 @@
+name = "N_to_P_at_HOTS_and_BATS"
+uuid = "e48dab0c-2dc6-4ec7-b567-dd88e788bebe"
+authors = ["Benoit Pasquier <pasquieb@uci.edu>"]
+version = "0.1.0"
