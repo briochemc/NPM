@@ -5,11 +5,11 @@
 #SBATCH --error=cluster_output/optimize_coupled_NP_model.err
 #SBATCH --time=12:00:00
 #SBATCH --nodes=1
-#SBATCH --mem=64GB
+#SBATCH --mem=32GB
 
 # Load the julia module
 
-# Go to the root folder on greenplanet
+# Cd to the root folder on USC HPC cluster
 cd /home/geovault-06/pasquier/Projects/NPM
 
 # Set DataDeps environment variable to download without asking
