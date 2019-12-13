@@ -1,10 +1,10 @@
 # This file is machine-generated - editing it directly is not advised
 
 [[AIBECS]]
-deps = ["BSON", "DataDeps", "DataFrames", "DiffEqBase", "Distances", "Distributions", "DualNumbers", "FieldMetadata", "Flatten", "Interpolations", "LinearAlgebra", "OceanGrids", "Parameters", "Printf", "RecipesBase", "Reexport", "SparseArrays", "SuiteSparse", "Unitful", "UnitfulAstro"]
-git-tree-sha1 = "f0cf05ef8f50272daf2dea55acf731e1605b624a"
+deps = ["BSON", "DataDeps", "DataFrames", "DiffEqBase", "Distances", "Distributions", "FieldMetadata", "Flatten", "ForwardDiff", "Interpolations", "LinearAlgebra", "OceanGrids", "Parameters", "Printf", "RecipesBase", "Reexport", "SparseArrays", "SuiteSparse", "Unitful", "UnitfulAstro"]
+git-tree-sha1 = "5fcad649cc29f2ca627fccef284c0bcb1b8268f7"
 uuid = "ace601d6-714c-11e9-04e5-89b7fad23838"
-version = "0.4.0"
+version = "0.4.1"
 
 [[Arpack]]
 deps = ["Arpack_jll", "Libdl", "LinearAlgebra"]
@@ -20,9 +20,9 @@ version = "3.5.0+2"
 
 [[ArrayInterface]]
 deps = ["LinearAlgebra", "Requires", "SparseArrays"]
-git-tree-sha1 = "487fc79b7b77cef8391675c0000ccd8e933e3533"
+git-tree-sha1 = "954b48dedb37ce8211209533380352c28e023fc4"
 uuid = "4fba245c-0d91-5ea0-9b3e-6abc04ee57a9"
-version = "2.0.0"
+version = "2.1.0"
 
 [[AxisAlgorithms]]
 deps = ["LinearAlgebra", "Random", "SparseArrays", "WoodburyMatrices"]
@@ -141,9 +141,9 @@ version = "6.7.0"
 
 [[DiffEqDiffTools]]
 deps = ["ArrayInterface", "LinearAlgebra", "Requires", "SparseArrays", "StaticArrays"]
-git-tree-sha1 = "6d83f9b2c2a552bf5ce29c20a526c0cbfd9e5270"
+git-tree-sha1 = "951600cc05d9626c3282e2ed125492931596e430"
 uuid = "01453d9d-ee7c-5054-8395-0335cb756afa"
-version = "1.5.0"
+version = "1.6.0"
 
 [[DiffResults]]
 deps = ["Compat", "StaticArrays"]
@@ -169,7 +169,9 @@ uuid = "8ba89e20-285c-5b6f-9357-94700520ee1b"
 
 [[Distributions]]
 deps = ["FillArrays", "LinearAlgebra", "PDMats", "Printf", "QuadGK", "Random", "SpecialFunctions", "Statistics", "StatsBase", "StatsFuns"]
-git-tree-sha1 = "860962bb355c97afdd7f9529cee7f26333401231"
+git-tree-sha1 = "14730b40b6fb14fc6e33229a77ed4f1dd35d3efb"
+repo-rev = "master"
+repo-url = "https://github.com/briochemc/Distributions.jl.git"
 uuid = "31c24e10-a181-5473-b8eb-7969acd0382f"
 version = "0.21.11"
 
