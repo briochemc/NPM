@@ -4,11 +4,13 @@ using WorldOceanAtlasTools, Optim, F1Method
 # WOA data
 μDINobs3D, σ²DINobs3D = WorldOceanAtlasTools.fit_to_grid(grd, 2018, "nitrate", "annual", "1°", "an")
 μDINobs, σ²DINobs = μDINobs3D[iwet], σ²DINobs3D[iwet]
-μx = (μDINobs, missing)
-σ²x = (σ²DINobs, missing)
+μPO₄obs3D, σ²PO₄obs3D = WorldOceanAtlasTools.fit_to_grid(grd, 2018, "phosphate", "annual", "1°", "an")
+μPO₄obs, σ²PO₄obs = μPO₄obs3D[iwet], σ²PO₄obs3D[iwet]
+μx = (μPO₄obs, missing, μDINobs, missing)
+σ²x = (σ²PO₄obs, missing, σ²DINobs, missing)
 
 # param weights
-ωs = [1.0, 0.0] # the weight for the mismatch (weight of POP = 0)
+ωs = [1.0, 0.0, 1.0, 0.0] # the weight for the mismatch (weight of POP = 0)
 ωp = 1e-4
 
 # objective functions
