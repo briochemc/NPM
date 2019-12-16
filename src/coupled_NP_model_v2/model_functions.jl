@@ -3,6 +3,7 @@
 T_PO₄(p) = T
 T_DIN(p) = T
 # Particulate organic matter transported by T_POM
+const z = ustrip.(grd.depth_3D[iwet])
 function w(p) # does not depend on p
     @unpack w₀, w′ = p
     return @. w₀ + w′ * z # same as POP

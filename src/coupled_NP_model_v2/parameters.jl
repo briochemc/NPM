@@ -7,6 +7,7 @@ import AIBECS: @flattenable, flattenable, flatten
 @flattenable @units @initial_value struct Params{Tp} <: AbstractParameters{Tp}
     w₀::Tp    |  0.25 | u"m/d"         | true
     w′::Tp    |  0.13 | u"m/d/m"       | true
+    z₀::Tp    |  80.0 | u"m"           | false
     τPOM::Tp  |   5.4 | u"d"           | true
     Uupt::Tp  |  1.15 | u"mmol/m^3/yr" | true
     kPO₄::Tp  |  0.06 | u"mmol/m^3"    | true

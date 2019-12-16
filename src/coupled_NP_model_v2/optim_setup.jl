@@ -6,15 +6,15 @@ using WorldOceanAtlasTools, Optim, F1Method
 μDINobs, σ²DINobs = μDINobs3D[iwet], σ²DINobs3D[iwet]
 μPO₄obs3D, σ²PO₄obs3D = WorldOceanAtlasTools.fit_to_grid(grd, 2018, "phosphate", "annual", "1°", "an")
 μPO₄obs, σ²PO₄obs = μPO₄obs3D[iwet], σ²PO₄obs3D[iwet]
-μx = (μPO₄obs, missing, μDINobs, missing)
-σ²x = (σ²PO₄obs, missing, σ²DINobs, missing)
+const μx = (μPO₄obs, missing, μDINobs, missing)
+const σ²x = (σ²PO₄obs, missing, σ²DINobs, missing)
 
 # param weights
-ωs = [1.0, 0.0, 1.0, 0.0] # the weight for the mismatch (weight of POP = 0)
-ωp = 1e-4
+const ωs = [1.0, 0.0, 1.0, 0.0] # the weight for the mismatch (weight of POP = 0)
+const ωp = 1e-4
 
 # objective functions
-v = ustrip.(vector_of_volumes(grd))
+const v = ustrip.(vector_of_volumes(grd))
 f, ∇ₓf, ∇ₚf = generate_objective_and_derivatives(ωs, μx, σ²x, v, ωp)
 
 # Use F1 for gradient and Hessian
@@ -47,7 +47,7 @@ function hess(λ)
     return ∇p * H * ∇p + Diagonal(G) * ∇²p
 end
 
-m = length(p)
+const m = length(p)
 grad(s, λ) = s[1:m] .= vec(grad(λ))
 hess(s, λ) = s[1:m,1:m] .= hess(λ)
 opt = Optim.Options(store_trace = false, show_trace = true, extended_trace = false)
