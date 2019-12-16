@@ -1,9 +1,9 @@
 #!/bin/bash
 
-#SBATCH --job-name=optimize_coupled_NP_model
-#SBATCH --output=cluster_output/optimize_coupled_NP_model.out
-#SBATCH --error=cluster_output/optimize_coupled_NP_model.err
-#SBATCH --time=12:00:00
+#SBATCH --job-name=optimize_coupled_NP_model_v2
+#SBATCH --output=cluster_output/optimize_coupled_NP_model_v2.out
+#SBATCH --error=cluster_output/optimize_coupled_NP_model_v2.err
+#SBATCH --time=24:00:00
 #SBATCH --nodes=1
 #SBATCH --mem=32GB
 
@@ -15,4 +15,4 @@ export LD_LIBRARY_PATH=~/Applications/julia-1.3.0/lib
 cd /home/geovault-06/pasquier/Projects/NPM
 
 # Run it!
-julia src/coupled_NP_model/cluster_run.jl
+julia src/coupled_NP_model_v2/cluster_run.jl
