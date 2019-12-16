@@ -7,8 +7,6 @@ function w(p) # does not depend on p
     @unpack w₀, w′ = p
     return @. w₀ + w′ * z # same as POP
 end
-iwet = findall(vec(iswet(grd)))
-z = ustrip.(grd.depth_3D[iwet])
 T_POM(p) = transportoperator(grd, w=w(p))
 T_POP = T_POM
 T_PON = T_POM
