@@ -14,11 +14,11 @@ T_PON = T_POM
 
 # PO₄ Uptake
 function uptake_P(PO₄, DIN, p)
-    @unpack Uupt, kPO₄, kDIN = p
+    @unpack Uupt, kPO₄, kDIN, z₀= p
     return @. Uupt * min(PO₄/(PO₄+kPO₄), DIN/(DIN+kDIN)) * (z≤z₀) * (DIN≥0) * (PO₄≥0)
 end
 function uptake_N(PO₄, DIN, p)
-    @unpack NtoP = p
+    @unpack NtoP, Uupt, kPO₄, kDIN, z₀= p
     return @. NtoP * Uupt * min(PO₄/(PO₄+kPO₄), DIN/(DIN+kDIN)) * (z≤z₀) * (DIN≥0) * (PO₄≥0)
 end
 
@@ -34,7 +34,7 @@ end
 
 # N₂ fixation
 function fixation(DIN,p)
-    @unpack Ufix, lowN = p
+    @unpack Ufix, lowN, z₀ = p
     return @. Ufix * exp(-DIN/lowN) * (z≤z₀)
 end
 
